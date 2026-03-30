@@ -1,16 +1,18 @@
 /* Navbar */
 .navbar {
   position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 90%;
   max-width: 1200px;
   z-index: 1000;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 100px; /* Modern pill shape */
 }
 
 .logo-brand {
@@ -41,14 +43,34 @@
 
 .nav-links {
   display: flex;
-  gap: 2rem;
-  transition: var(--transition);
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--text-main);
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+  letter-spacing: 0.5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-link:hover {
@@ -318,26 +340,27 @@ footer {
   }
 
   .nav-links {
-    display: none; /* Hide by default in flow */
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
+    position: absolute;
+    top: -1.5rem;
+    left: calc(50% - 50vw);
+    width: 100vw;
     height: 100vh;
     background: rgba(1, 4, 9, 0.98);
     backdrop-filter: blur(20px);
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
     z-index: 999;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
     transform: translateX(100%);
+    visibility: hidden;
   }
 
   .nav-links.active {
-    display: flex; /* Show when active */
     transform: translateX(0);
+    visibility: visible;
   }
 
   .nav-link {
