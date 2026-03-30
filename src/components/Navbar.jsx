@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import logoImg from '../assets/logo.jpeg';
-
-const navLinks = [
-  { id: 1, href: '#home', label: 'Home' },
-  { id: 2, href: '#services', label: 'Services' },
-  { id: 3, href: '#products', label: 'Our Fish' },
-  { id: 4, href: '#contact', label: 'Inquiry' },
-];
+import { COMPANY_NAME, COMPANY_NAME_STYLED, navLinks } from '../constants';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,8 +10,8 @@ const Navbar = () => {
   return (
     <nav className={`navbar glass animate-fade-in ${isMenuOpen ? 'menu-active' : ''}`}>
       <div className="logo-brand">
-        <img src={logoImg} alt="Aqua Elara Logo" className="nav-logo-img" />
-        <div className="logo">AQUA<span>ELARA</span></div>
+        <img src={logoImg} alt={`${COMPANY_NAME} Logo`} className="nav-logo-img" />
+        <div className="logo">{COMPANY_NAME_STYLED.first}<span>{COMPANY_NAME_STYLED.second}</span></div>
       </div>
       <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         {navLinks.map((link) => (

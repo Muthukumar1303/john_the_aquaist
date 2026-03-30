@@ -1,28 +1,5 @@
 import React from 'react';
-import fish1 from '../assets/fish1.jpeg';
-import fish2 from '../assets/fish2.jpeg';
-import fish3 from '../assets/fish3.jpeg';
-
-const productList = [
-  {
-    id: 1,
-    image: fish1,
-    name: "Blue Diamond Discus",
-    description: "Grade A+ vibrant blue tropical beauty.",
-  },
-  {
-    id: 2,
-    image: fish2,
-    name: "Premium Kohaku Koi",
-    description: "Select Japanese lineage Japanese Koi.",
-  },
-  {
-    id: 3,
-    image: fish3,
-    name: "Royal Halfmoon Betta",
-    description: "Exquisite fins and majestic colors.",
-  },
-];
+import { productList } from '../constants';
 
 const Products = () => {
   return (
