@@ -9,6 +9,13 @@ export const COMPANY_NAME_STYLED = {
 };
 export const COMPANY_FULL_NAME = "Aqua Elara Exports Inc.";
 
+export const CONTACT_DETAILS = {
+  email: "exports@aquaelara.com",
+  phone: "+1 (555) 123-4567",
+  address: "123 Aquatic Way, Ocean City, CA 90210",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=123+Aquatic+Way,+Ocean+City,+CA+90210"
+};
+
 export const navLinks = [
   { id: 1, href: '#home', label: 'Home' },
   { id: 2, href: '#services', label: 'Services' },
